@@ -42,7 +42,7 @@ const Carousel = ({ items }) => {
 
     return (
         <div className='w-full'>
-            <div className='slides-container relative overflow-hidden rounded-none lg:rounded-xl'>
+            <div className='relative overflow-hidden rounded-b-xl'>
                 <div
                     className="flex items-center h-52 md:h-72 lg:h-[500px]"
                     style={{

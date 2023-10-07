@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      popins: "'Poppins', sans-serif",
+    }
   },
   plugins: [daisyui],
   daisyui: {

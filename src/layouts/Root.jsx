@@ -4,7 +4,7 @@ import Footer from "../components/shared/Footer/Footer";
 
 const Root = () => {
     return (
-        <div data-theme="light">
+        <div data-theme="light" className="font-popins">
             <div className="container mx-auto">
                 <Header />
                 <Outlet />
