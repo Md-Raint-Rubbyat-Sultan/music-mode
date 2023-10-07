@@ -6,6 +6,7 @@ const Header = () => {
     const links = <>
         <li><NavLink className={``} to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/login'}>Login</NavLink></li>
+        <li><NavLink to={'/upcoming'}>Upcoming</NavLink></li>
     </>
 
     return (
@@ -19,8 +20,8 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="normal-case text-xl flex items-center gap-1">
-                    <img className="w-8 h-8" src={`${logo}`} alt="" />
+                <div className="normal-case text-xl whitespace-nowrap flex items-center gap-1">
+                    <img className="w-8 h-8" src={`${logo}`} alt="logo" />
                     <span>usic Mode</span>
                     </div>
             </div>
