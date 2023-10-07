@@ -1,0 +1,44 @@
+[
+    {
+        "id": "CT12345",
+        "FestivalName": "Summer Jam Fest",
+        "Image": "https://i.ibb.co/cYYbcxJ/summerjam-35-WP.jpg",
+        "Price": "$50.00",
+        "ShortDescription": "Secure your spot at the hottest music festival of the season! Don't miss out on this incredible opportunity to experience the best live performances from top artists in a beautiful outdoor setting. Join thousands of music lovers for a weekend of non-stop music, food, and fun. Get your tickets now and be part of the Summer Jam Fest experience!"
+    },
+    {
+        "id": "CT67890",
+        "FestivalName": "Electro Fusion Festival",
+        "Image": "https://i.ibb.co/K2ssXth/Electro-Fusion-Festival.jpg",
+        "Price": "$75.00",
+        "ShortDescription": "Join the electronic music revolution at Electro Fusion! Immerse yourself in the world of cutting-edge beats, mind-blowing visuals, and unforgettable performances by top DJs and producers. This festival is a celebration of electronic music culture like you've never seen before. Grab your tickets and get ready to dance the night away!"
+    },
+    {
+        "id": "CT24680",
+        "FestivalName": "Rock Revolution Fest",
+        "Image": "https://i.ibb.co/56Xt60G/image-14195-1-large.png",
+        "Price": "$60.00",
+        "ShortDescription": "Rock out with the biggest bands in the world! Get ready for a rock 'n' roll extravaganza featuring legendary artists and rising stars. From classic rock to modern hits, Rock Revolution Fest has it all. Join us for a weekend of epic guitar solos, powerful vocals, and pure rock energy. Get your tickets now and be part of rock history!"
+    },
+    {
+        "id": "CT13579",
+        "FestivalName": "Hip-Hop City Fest",
+        "Image": "https://i.ibb.co/7nDTm2v/HHDFBanner.jpg",
+        "Price": "$80.00",
+        "ShortDescription": "Get ready to rap with the finest hip-hop artists! Hip-Hop City Fest brings together the biggest names in the game for a night of beats, rhymes, and unforgettable performances. Whether you're a fan of old-school hip-hop or the latest chart-toppers, this festival has something for everyone. Secure your tickets and join the hip-hop revolution!"
+    },
+    {
+        "id": "CT98765",
+        "FestivalName": "Country Harmony Fest",
+        "Image": "https://i.ibb.co/vsG2SNw/harmony.jpg",
+        "Price": "$55.00",
+        "ShortDescription": "Experience the heart of country music at its best! Country Harmony Fest is a celebration of all things country, from twangy tunes to two-stepping fun. Join us for a weekend of live music, line dancing, and down-home hospitality. Grab your cowboy boots and get ready for a country music experience like no other!"
+    },
+    {
+        "id": "CT11223",
+        "FestivalName": "Pop Extravaganza Fest",
+        "Image": "https://i.ibb.co/jDdtz8z/pop.jpg",
+        "Price": "$70.00",
+        "ShortDescription": "Dance to the top pop hits at Pop Extravaganza! This festival is a pop music lover's dream come true, featuring chart-topping artists, dazzling performances, and a dance floor that never stops. Get ready to sing along to your favorite songs and make memories that will last a lifetime. Grab your tickets and join the pop party!"
+    }
+]
