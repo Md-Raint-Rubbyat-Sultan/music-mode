@@ -55,6 +55,7 @@ const Carousel = ({ items }) => {
                                 key={idx}
                                 src={`${item}`}
                                 alt={item.slide}
+                                loading='lazy'
                                 style={{
                                     width: `${currentWidth}px`,
                                     transform: `translateX(-${currentIdx * 100}%)`,
@@ -86,7 +87,7 @@ const Carousel = ({ items }) => {
 };
 
 Carousel.propTypes = {
-    items: PropTypes.array,
+    items: PropTypes.array.isRequired,
 }
 
 export default Carousel;

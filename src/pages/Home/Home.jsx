@@ -5,6 +5,7 @@ import image2 from "../../assets/carouselImages/back-view-crowd-fans-watching-li
 import image3 from "../../assets/carouselImages/SL_123119_26540_09.jpg";
 
 const Home = () => {
+    // carousel items array
     const items = [image1, image2, image3];
     return (
         <div>

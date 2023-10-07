@@ -5,8 +5,8 @@ import Footer from "../components/shared/Footer/Footer";
 const Root = () => {
     return (
         <div data-theme="light">
-            <Header />
             <div className="container mx-auto">
+                <Header />
                 <Outlet />
             </div>
             <Footer />
