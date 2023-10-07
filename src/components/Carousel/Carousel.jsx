@@ -68,7 +68,7 @@ const Carousel = ({ items }) => {
                     <p className='text-white bg-[#00000080] text-lg lg:text-3xl font-black pt-[2px] md:pt-[3px] lg:pt-1 px-[6px] md:px-2 lg:px-3 pb-[5px] md:pb-[7px] lg:pb-[10px] rounded-full'>&larr;</p>
                 </div>
                 <div onClick={goNext} className='absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer z-20'>
-                    <p className='text-white bg-[#00000080] text-lg lg:text-3xl font-black pt-1 px-3 pb-[10px] rounded-full'>&rarr;</p>
+                    <p className='text-white bg-[#00000080] text-lg lg:text-3xl font-black pt-[2px] md:pt-[3px] lg:pt-1 px-[6px] md:px-2 lg:px-3 pb-[5px] md:pb-[7px] lg:pb-[10px] rounded-full'>&rarr;</p>
                 </div>
             </div>
             <div className="flex justify-center items-center">
