@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../../layouts/Root";
 import Home from "../../pages/Home/Home";
 import Spinner from "../../components/Spinner/Spinner";
+import PrivetRoute from "../privetRoute/PrivetRoute";
 const Error = lazy(() => import("../../components/shared/Error/Error"));
 const Login = lazy(() => import("../../pages/Login/Login"));
 const Register = lazy(() => import("../../pages/Register/Register"));
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/service/:id',
-                element: <Suspense fallback={<Spinner />}><ServiceDetails /></Suspense>,
+                element: <Suspense fallback={<Spinner />}><PrivetRoute><ServiceDetails /></PrivetRoute></Suspense>,
                 loader: async ({ params }) => {
                     const res = await fetch('../../../public/fakeData.json');
                     const data = await res.json();
@@ -36,11 +37,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/upcoming',
-                element: <Suspense fallback={<Spinner />}><UpcomingEvent /></Suspense>,
+                element: <Suspense fallback={<Spinner />}><PrivetRoute><UpcomingEvent /></PrivetRoute></Suspense>,
             },
             {
                 path: '/query',
-                element: <Suspense fallback={<Spinner />}><Query /></Suspense>,
+                element: <Suspense fallback={<Spinner />}><PrivetRoute><Query /></PrivetRoute></Suspense>,
             },
             {
                 path: '/login',
@@ -51,5 +52,5 @@ export const router = createBrowserRouter([
                 element: <Suspense fallback={<Spinner />}><Register /></Suspense>,
             },
         ],
-    }
+    },
 ])

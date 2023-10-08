@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, setLoading } = useContext(AuthContext);
     const [showPass, setShowPass] = useState(() => false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -21,7 +21,6 @@ const Register = () => {
             displayName: name,
             photoURL: photo
         }
-        console.log(name, photo, email, password);
 
         // password validation
         if (!/[0-6]/.test(password)) {
@@ -35,15 +34,15 @@ const Register = () => {
         }
 
         createUser(email, password)
-            .then((result) => {
+            .then(() => {
                 updateUserProfile(profile)
                     .then(() => toast.success("User name and photo url updated"))
                     .catch(er => toast.error(er.message))
                 toast.success("User register successfully");
                 navigate(location?.state || '/');
-                console.log(result?.user);
             })
             .catch(er => toast.error(er.message))
+            .finally(() => setLoading(() => false))
     }
 
     return (
