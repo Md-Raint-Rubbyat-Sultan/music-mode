@@ -79,7 +79,7 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type={showPass ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
-                                <span onClick={() => setShowPass((prev) => !prev)} className="mt-4 text-sm font-bold text-right cursor-pointer">Show</span>
+                                <span onClick={() => setShowPass((prev) => !prev)} className="mt-4 text-sm font-bold text-right cursor-pointer">{showPass ? "Hidden" : "Show"}</span>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="bg-yellow-500 py-3 rounded-lg text-white font-semibold uppercase">Register</button>

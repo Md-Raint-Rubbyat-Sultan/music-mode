@@ -58,7 +58,7 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type={showPass ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
-                                <span onClick={() => setShowPass((prev) => !prev)} className="my-4 text-sm font-bold text-right cursor-pointer">Show</span>
+                                <span onClick={() => setShowPass((prev) => !prev)} className="my-4 text-sm font-bold text-right cursor-pointer">{showPass ? "Hidden" : "Show"}</span>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
