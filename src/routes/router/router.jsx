@@ -1,16 +1,22 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../../layouts/Root";
-import Error from "../../components/shared/Error/Error";
 import Home from "../../pages/Home/Home";
-import Login from "../../pages/Login/Login";
-import Register from "../../pages/Register/Register";
-import UpcomingEvent from "../../pages/UpcomingEvent/UpcomingEvent";
+import Spinner from "../../components/Spinner/Spinner";
+const Error = lazy(() => import("../../components/shared/Error/Error"));
+const Login = lazy(() => import("../../pages/Login/Login"));
+const Register = lazy(() => import("../../pages/Register/Register"));
+const UpcomingEvent = lazy(() => import("../../pages/UpcomingEvent/UpcomingEvent"));
+const Query = lazy(() => import("../../pages/QueryPage/Query"));
+// import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
+const ServiceDetails = lazy(() => import("../../pages/ServiceDetails/ServiceDetails"));
+
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
-        errorElement: <Error />,
+        errorElement: <Suspense fallback={<Spinner />}><Error /></Suspense>,
         children: [
             {
                 path: '/',
@@ -18,16 +24,31 @@ export const router = createBrowserRouter([
                 loader: async () => await fetch('../../../public/fakeData.json'),
             },
             {
+                path: '/service/:id',
+                element: <Suspense fallback={<Spinner />}><ServiceDetails /></Suspense>,
+                loader: async ({ params }) => {
+                    const res = await fetch('../../../public/fakeData.json');
+                    const data = await res.json();
+
+                    const singleData = data.find(single => single?.id === params.id)
+                    return singleData;
+                }
+            },
+            {
                 path: '/upcoming',
-                element: <UpcomingEvent />,
+                element: <Suspense fallback={<Spinner />}><UpcomingEvent /></Suspense>,
+            },
+            {
+                path: '/query',
+                element: <Suspense fallback={<Spinner />}><Query /></Suspense>,
             },
             {
                 path: '/login',
-                element: <Login />,
+                element: <Suspense fallback={<Spinner />}><Login /></Suspense>,
             },
             {
                 path: '/register',
-                element: <Register />,
+                element: <Suspense fallback={<Spinner />}><Register /></Suspense>,
             },
         ],
     }

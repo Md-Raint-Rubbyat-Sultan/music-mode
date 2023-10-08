@@ -17,7 +17,7 @@ const Home = () => {
         <div>
             <HelmetTitle title="Music-Mode" />
             {/* carousel section */}
-            <div className="mb-20">
+            <div className="mb-20 lg:mt-4">
                 <Carousel items={items} />
             </div>
             {/* services section */}
