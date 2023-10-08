@@ -1,13 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import profileIcon from "../../../assets/Icons/user.png";
 import logo from "../../../assets/Icons/android-chrome-192x192.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handelSignOut = () => {
+        logOut()
+            .then(() => toast.success("LogOut Successful"))
+            .catch(er => toast.error(er.message))
+    }
+
     const links = <>
         <li><NavLink className={``} to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/upcoming'}>Upcoming</NavLink></li>
-        <li><NavLink to={'/query'}>Query</NavLink></li>
-        <li><NavLink to={'/login'}>Login</NavLink></li>
+        {
+            user ?
+                <>
+                    <li><NavLink to={'/upcoming'}>Upcoming</NavLink></li>
+                    <li><NavLink to={'/query'}>Query</NavLink></li>
+                    <li onClick={handelSignOut}><Link to={'/'}>Sign Out</Link></li>
+                </>
+                :
+                <li><NavLink to={'/login'}>Login</NavLink></li>
+        }
     </>
 
     return (
@@ -33,9 +51,10 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                    <h4 className="text-md hidden md:block">{user?.displayName || ''}</h4>
+                    <label title={`${user?.displayName || ''}`} tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                            <img src={`${profileIcon}`} />
+                            <img src={`${user?.photoURL || profileIcon}`} />
                         </div>
                     </label>
                 </div>

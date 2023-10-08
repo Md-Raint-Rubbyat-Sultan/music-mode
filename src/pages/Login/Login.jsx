@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HelmetTitle from "../../components/shared/HelmetTitle/HelmetTitle";
+import { useState } from "react";
 
 const Login = () => {
+    const location = useLocation();
+    const [showPass, setShowPass] = useState(() => false);
+
     return (
         <div>
             <HelmetTitle title="Misc-Login" />
@@ -23,7 +27,8 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <input type={showPass ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
+                                <span onClick={() => setShowPass((prev) => !prev)} className="my-4 text-sm font-bold text-right cursor-pointer">Show</span>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -31,7 +36,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="bg-yellow-500 py-3 rounded-lg text-white font-semibold uppercase">Login</button>
                             </div>
-                            <p className="text-sm">Already have an account? Please <Link to={'/register'} className="btn-link" >Register</Link></p>
+                            <p className="text-sm">Don&lsquo;t have an account? Please <Link state={location?.state} to={'/register'} className="btn-link" >Register</Link></p>
                         </form>
                     </div>
                 </div>
