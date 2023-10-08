@@ -1,8 +1,10 @@
-# React + Vite
+# Music Mode
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features:
+- This site is build with firebase authentication.
+- You can sign up with google or email password.
+- This site also have dynamic route (Service details) which is privet. Without login into the site you can't access to it.
+- Privet routes are design with location state management.
+- The Query page is still on progress but you can see the demo into the site.(Also a privet route)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Music-Mode-Site](https://music-mode-17797.web.app/)

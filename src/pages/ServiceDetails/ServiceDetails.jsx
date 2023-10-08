@@ -6,9 +6,9 @@ const ServiceDetails = () => {
     const { FestivalName, Image, Price, ShortDescription } = singleData;
 
     return (
-        <div className="h-screen">
+        <div className="lg:h-screen">
             <HelmetTitle title="Service Details" />
-            <div className="flex items-start gap-6 my-12 px-4">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 my-12 px-4">
                 <div className="flex-1">
                     <img className="w-3/4 mx-auto" src={Image} alt={FestivalName} />
                     <div className="my-6 space-y-6 text-center">

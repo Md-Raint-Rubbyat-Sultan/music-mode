@@ -22,13 +22,13 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: async () => await fetch('../../../public/fakeData.json'),
+                loader: async () => await fetch('/fakeData.json'),
             },
             {
                 path: '/service/:id',
                 element: <Suspense fallback={<Spinner />}><PrivetRoute><ServiceDetails /></PrivetRoute></Suspense>,
                 loader: async ({ params }) => {
-                    const res = await fetch('../../../public/fakeData.json');
+                    const res = await fetch('/fakeData.json');
                     const data = await res.json();
 
                     const singleData = data.find(single => single?.id === params.id)
